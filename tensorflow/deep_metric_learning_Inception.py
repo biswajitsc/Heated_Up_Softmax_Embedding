@@ -296,6 +296,7 @@ for step in tqdm(range(int(num_training_sample / training_batch_size)+1)):
     img = np.zeros((real_size, default_image_size,\
             default_image_size, 3), dtype = np.float32)
     label =  np.zeros((real_size, num_training_category), dtype = np.float32)
+    offset = np.int32(offset)
     img[:,:,:,:] = img_data[ptr:ptr+real_size,\
         offset:(offset+default_image_size),\
         offset:(offset+default_image_size),:] 
